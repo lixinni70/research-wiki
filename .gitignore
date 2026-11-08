@@ -3,3 +3,6 @@
 .trash/
 .DS_Store
 Thumbs.db
+
+# 有版權的原文不公開上傳（只留在本機）
+raw/papers/*.pdf
