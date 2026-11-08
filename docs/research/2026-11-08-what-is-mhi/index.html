@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>什麼是微型健康保險？為什麼需要討論它？ · 研究 Wiki 知識庫</title>
+<link rel="stylesheet" href="../../assets/katex.min.css">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="../../index.html">研究 Wiki 知識庫</a><nav class="main"><a href="../../index.html">首頁</a><a href="../../wiki/index.html">目錄</a><a href="../../wiki/overview.html">總覽</a><a href="../../research/index.html">研究產出</a><a href="../../wiki/questions.html">開放問題</a><a href="../../wiki/log.html">更新紀錄</a><a href="../../rules.html">專案規則</a></nav></div></header>
+<div class="wrap"><main><div class="crumb">研究筆記</div><script type="text/markdown" id="md"># 什麼是微型健康保險？為什麼需要討論它？
+
+> 本筆記只使用 wiki 內容（截至 2026-11-08，共 1 份來源）。網路搜尋找到的文獻只列在最後的「建議參考文獻」。
+
+## 摘要
+- 微型健康保險（MHI）是針對低收入族群、保費低、保障有限的健康保險，常透過微型金融機構提供（[微型健康保險](../../wiki/micro-health-insurance.html)）。
+- 需要討論它，是因為健康衝擊是微型貸款借款人無法脫貧的主要原因（[微型貸款](../../wiki/microcredit.html)），而非正式的風險分擔方式保障有限（[非正式風險分擔](../../wiki/informal-risk-sharing.html)）。
+- 但目前 wiki 中唯一的實證研究顯示，MHI 只和糧食充足度有顯著正向關聯（[Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh](../../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html)），效果和方案設計都還有很多待釐清的地方。
+
+## 一、什麼是微型健康保險
+
+### 1.1 定義
+- 微型保險：「依風險發生機率與成本，收取定期保費，保護低收入者免於特定風險」（Churchill 2006，引自 [微型保險](../../wiki/microinsurance.html)）。
+- MHI 是微型保險的一種，專門針對健康風險（[微型健康保險](../../wiki/micro-health-insurance.html)）。
+
+### 1.2 保險的基本邏輯
+保險的目的是把「不確定但可能很大的損失」換成「確定且很小的支出」（Newhouse 1978，引自 [Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh](../../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html)）。
+
+設 $\rho$ 為生病機率、$L$ 為醫療支出、$R=\rho L$ 為公平保費。風險趨避者在 $EU_i > EU_0$ 時會投保（[保險需求理論](../../wiki/insurance-demand-theory.html)）：
+
+$$EU_0=(1-\rho)U(Y)+\rho U(Y-L)$$
+$$EU_i=(1-\rho)U(Y-R)+\rho U(Y-L+I-R)$$
+
+### 1.3 實例：Grameen 的 MHI
+（[Grameen Kalyan](../../wiki/grameen-kalyan.html)、[微型健康保險](../../wiki/micro-health-insurance.html)，描述的是 2006–2008 年的狀況）
+
+- **兩方制**：保險人就是醫療提供者，不同於傳統的三方制。
+- **保費**：每戶每年 120 塔卡（約 1.74 美元，GB 會員），涵蓋最多 6 人。當時女性日薪約 60 塔卡。
+- **給付**：門診自付 10 塔卡（未投保者 25 塔卡），藥品和檢驗有折扣，另有免費健檢和疫苗接種。
+- **規模**：2008 年 12 月涵蓋 10 個縣、25 個次區、39 個聯合區（[Grameen Bank](../../wiki/grameen-bank.html)）。
+- **性質**：比較接近「醫療預付」，而不是承保重大醫療支出的保險。
+
+## 二、為什麼需要討論
+
+### 2.1 微型貸款的缺口
+- 家人生病是 GB 借款人無法脫離貧窮線的主要原因（Todd 1996；Wright 2000，引自 [微型貸款](../../wiki/microcredit.html)）。
+- 生病會降低工作能力，並讓資源從投資轉向醫療（[微型貸款](../../wiki/microcredit.html)）。
+
+### 2.2 非正式保險不夠用
+- 印尼的家戶能自我保險約 70% 的一般健康衝擊，但面對重大疾病只能保障約 30% 的消費（Gertler & Gruber 2002，引自 [非正式風險分擔](../../wiki/informal-risk-sharing.html)）。
+
+### 2.3 效果證據有限
+Hamid et al. (2011) 比較了 MHI 已設置 ≥ 5 年和沒有 MHI 的地區（[Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh](../../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html)）：
+
+| 結果 | 係數 | 顯著性 |
+|---|---|---|
+| log 人均所得 | 0.080 | — |
+| log 人均非土地資產 | 0.096 | — |
+| 糧食充足度 | 0.355 | 10% |
+| 在貧窮線以上 | 0.202 | — |
+
+### 2.4 方案設計上的取捨
+- **共付額的兩面性**：共付額用來抑制[道德風險](../../wiki/moral-hazard.html)，但對極貧家戶仍是阻礙，他們會轉向提供賒帳的非正式醫療者。
+- **保障深度不足**：沒有二、三級醫療，轉診沒有運作，住院給付的資金也已經用完（[Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh](../../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html)）。
+- **逆選擇不嚴重**：方案本來就針對窮人這個高風險族群，[逆選擇](../../wiki/adverse-selection.html)不是主要問題（[微型健康保險](../../wiki/micro-health-insurance.html)）。
+- **評估方法困難**：參與者自我選擇會造成內生性，外溢效果也會影響估計。Hamid et al. 因此改用「方案設置」估計平均處理效果（[方案設置評估法](../../wiki/program-placement-evaluation.html)）。
+
+## 三、不確定之處與 wiki 缺口
+- wiki 目前只有 1 份實證來源，而且是單一國家、單一方案、只有一次的橫斷面資料。
+- 沒有隨機實驗的證據，也沒有其他國家的比較。
+- 沒有 2011 年之後的資料。
+- 待確認：邊際效果 0.078 的單位（見 [開放問題與待讀清單](../../wiki/questions.html)）。
+
+## 建議參考文獻
+_尚未納入 wiki。下載後存進 `raw/papers/`，再說「匯入」。_
+
+1. Cai, Chen, Fang & Zhou (2010). *Microinsurance, Trust and Economic Development: Evidence from a Randomized Natural Field Experiment.* NBER WP 15396。[PDF 下載](https://nber.org/system/files/working_papers/w15396/w15396.pdf)
+   - 補缺口：隨機實驗證據。
+   - 存檔：`raw/papers/2010-cai-microinsurance-trust.pdf`
+2. *The role of micro health insurance in providing financial risk protection in developing countries — a systematic review.* BMC Public Health (2016)。[PDF 下載](https://bmcpublichealth.biomedcentral.com/track/pdf/10.1186/s12889-016-2937-9)（開放取用）
+   - 補缺口：跨國綜述。
+   - 存檔：`raw/papers/2016-bmc-mhi-systematic-review.pdf`
+3. Gertler & Gruber (2002). *Insuring Consumption Against Illness.* AER；NBER WP 8148。[PDF 下載](https://www.nber.org/system/files/working_papers/w8148/w8148.pdf)
+   - 補缺口：非正式保險的保障程度（目前 wiki 只有二手引用）。
+   - 存檔：`raw/papers/2002-gertler-insuring-consumption-illness.pdf`
+4. Churchill, C. (ed.) (2006). *Protecting the Poor: A Microinsurance Compendium.* ILO。[聯合國數位圖書館](https://digitallibrary.un.org/record/593737)
+   - 補缺口：微型保險的定義與設計原則。
+   - 存檔：`raw/papers/2006-churchill-microinsurance-compendium.pdf`
+</script><article id="content"></article></main><aside><div class="box"><h4>頁面資訊</h4><dl><dt>建立</dt><dd>2026-11-08</dd></dl><h4 style='margin-top:16px'>使用的 wiki 頁面</h4><ul><li><a href="../../wiki/micro-health-insurance.html">微型健康保險</a></li><li><a href="../../wiki/microinsurance.html">微型保險</a></li><li><a href="../../wiki/microcredit.html">微型貸款</a></li><li><a href="../../wiki/insurance-demand-theory.html">保險需求理論</a></li><li><a href="../../wiki/moral-hazard.html">道德風險</a></li><li><a href="../../wiki/adverse-selection.html">逆選擇</a></li><li><a href="../../wiki/informal-risk-sharing.html">非正式風險分擔</a></li><li><a href="../../wiki/program-placement-evaluation.html">方案設置評估法</a></li><li><a href="../../wiki/grameen-bank.html">Grameen Bank</a></li><li><a href="../../wiki/grameen-kalyan.html">Grameen Kalyan</a></li><li><a href="../../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html">Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh</a></li></ul></div></aside></div>
+<footer>由 AI 依 <a href="../../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-08</footer>
+<script src="../../assets/marked.min.js"></script>
+<script src="../../assets/katex.min.js"></script>
+<script src="../../assets/auto-render.min.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>
