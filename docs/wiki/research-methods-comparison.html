@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 種研究方法比較 · 研究 Wiki 知識庫</title>
+<link rel="stylesheet" href="../assets/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="../index.html">研究 Wiki 知識庫</a><nav class="main"><a href="../index.html">首頁</a><a href="../wiki/index.html">目錄</a><a href="../wiki/overview.html">總覽</a><a href="../research/index.html">研究產出</a><a href="../wiki/questions.html">開放問題</a><a href="../wiki/log.html">更新紀錄</a><a href="../rules.html">專案規則</a></nav></div></header>
+<div class="wrap"><main><div class="crumb">比較 · 研究方法</div><script type="text/markdown" id="md"># 5 種研究方法比較
+
+## 比較目的
+用 wiki 中的 5 篇研究，說明不同研究問題適合不同方法。這頁是「研究方法入門」教學簡報的主要依據。
+
+## 對照表
+
+| 研究問題 | 方法 | 例子 | 資料 | 能回答 | 不能回答 |
+|---|---|---|---|---|---|
+| 有沒有效果？ | 準實驗：方案設置評估（[方案設置評估法](../wiki/program-placement-evaluation.html)） | Hamid et al. 2011 | 329 戶家戶調查，比較有、無方案的鄰近地區 | 方案和結果的關係，比較接近因果 | 完全排除設置偏誤 |
+| 哪些因素有關？ | 迴歸分析（[迴歸分析](../wiki/regression-analysis.html)） | Cull et al. 2007 | 49 國 124 家機構的橫斷面資料 | 多個因素同時的相關、取捨 | 因果（見 [相關不等於因果](../wiki/correlation-vs-causation.html)） |
+| 換一種做法會怎樣？ | 個案研究與模擬（[個案研究與模擬](../wiki/case-study-and-simulation.html)） | Popova & Simkins 2015 | 3 家公司年報中的避險部位 | 具體影響有多大、細節 | 推論到所有公司 |
+| 未來會怎樣？ | ARIMA 時間序列（[ARIMA 時間序列模型](../wiki/arima-time-series.html)） | Mondal et al. 2014 | 56 檔股票的歷史股價 | 短期預測 | 為什麼會變動 |
+| 該怎麼選？ | AHP／ANP（[AHP 與 ANP 多準則決策](../wiki/ahp-anp.html)） | 李婉綾 2022 | 問卷：民眾 182 份、專家 8 份 | 準則的相對重要性 | 客觀上哪個方案最好 |
+
+來源：[Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh](../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html)、[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html)、[OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness and Corporate Capital Requirements](../wiki/2015-popova-otc-vs-exchange-traded-derivatives.html)、[Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices](../wiki/2014-mondal-arima-stock-forecasting.html)、[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html)
+
+## 分析
+1. **先問問題，再選方法**：同樣是金融主題，問「有沒有效」和問「未來多少」，需要完全不同的方法。
+2. **資料決定可行性**：OTC 合約資料難取得，所以 [OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness and Corporate Capital Requirements](../wiki/2015-popova-otc-vs-exchange-traded-derivatives.html) 只能用個案；[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html) 有統一的跨國資料庫，才能做迴歸。
+3. **每種方法都有作者自己承認的限制**：[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html) 說只描述相關；[Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh](../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html) 承認可能有設置偏誤；[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html) 有 36% 的有效問卷沒通過一致性檢定（[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html)）。
+4. **評估標準要合理**：[Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices](../wiki/2014-mondal-arima-stock-forecasting.html) 的高準確度沒有和簡單基準比較，讀者要自己判斷（[Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices](../wiki/2014-mondal-arima-stock-forecasting.html)）。
+
+## 結論：怎麼選方法
+- 想知道**因果** → 盡量找準實驗或實驗設計。
+- 想知道**哪些因素一起變動** → 迴歸，但不要說成因果。
+- 只有**少數案例**但需要細節 → 個案研究加模擬。
+- 要**預測數字** → 時間序列，並和簡單基準比較。
+- 要**做決策**、沒有客觀資料 → AHP／ANP，並檢查一致性。
+</script><article id="content"></article></main><aside><div class="box"><h4>頁面資訊</h4><dl><dt>狀態</dt><dd><span class="status-solid">solid</span></dd><dt>建立</dt><dd>2026-11-18</dd><dt>更新</dt><dd>2026-11-18</dd></dl><p><span class="tag">研究方法</span><span class="tag">比較</span></p><h4 style='margin-top:16px'>來源</h4><ul><li><a href="../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html">Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh</a></li><li><a href="../wiki/2007-cull-financial-performance-outreach-microbanks.html">Financial Performance and Outreach: A Global Analysis of Leading Microbanks</a></li><li><a href="../wiki/2015-popova-otc-vs-exchange-traded-derivatives.html">OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness and Corporate Capital Requirements</a></li><li><a href="../wiki/2014-mondal-arima-stock-forecasting.html">Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices</a></li><li><a href="../wiki/2022-li-light-steel-housing-anp.html">輕鋼構複合小型住宅使用者決策研究</a></li></ul><h4 style='margin-top:16px'>反向連結</h4><ul><li><a href="../wiki/ahp-anp.html">AHP 與 ANP 多準則決策</a></li><li><a href="../wiki/arima-time-series.html">ARIMA 時間序列模型</a></li><li><a href="../wiki/2007-cull-financial-performance-outreach-microbanks.html">Financial Performance and Outreach: A Global Analysis of Leading Microbanks</a></li><li><a href="../wiki/2015-popova-otc-vs-exchange-traded-derivatives.html">OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness and Corporate Capital Requirements</a></li><li><a href="../wiki/2014-mondal-arima-stock-forecasting.html">Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices</a></li><li><a href="../wiki/case-study-and-simulation.html">個案研究與模擬</a></li><li><a href="../wiki/program-placement-evaluation.html">方案設置評估法</a></li><li><a href="../wiki/log.html">更新紀錄</a></li><li><a href="../wiki/index.html">目錄</a></li><li><a href="../wiki/correlation-vs-causation.html">相關不等於因果</a></li><li><a href="../research/2026-11-18-research-methods-intro/index.html">研究方法入門：用 5 篇論文看 5 種方法</a></li><li><a href="../research/2026-11-18-research-methods-intro/outline.html">簡報逐頁內容：研究方法入門</a></li><li><a href="../wiki/2022-li-light-steel-housing-anp.html">輕鋼構複合小型住宅使用者決策研究</a></li><li><a href="../wiki/regression-analysis.html">迴歸分析</a></li><li><a href="../wiki/overview.html">領域總覽</a></li></ul></div></aside></div>
+<footer>由 AI 依 <a href="../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-18</footer>
+<script src="../assets/marked.min.js"></script>
+<script src="../assets/katex.min.js"></script>
+<script src="../assets/auto-render.min.js"></script>
+<script src="../assets/site.js"></script>
+</body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>迴歸分析 · 研究 Wiki 知識庫</title>
+<link rel="stylesheet" href="../assets/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="../index.html">研究 Wiki 知識庫</a><nav class="main"><a href="../index.html">首頁</a><a href="../wiki/index.html">目錄</a><a href="../wiki/overview.html">總覽</a><a href="../research/index.html">研究產出</a><a href="../wiki/questions.html">開放問題</a><a href="../wiki/log.html">更新紀錄</a><a href="../rules.html">專案規則</a></nav></div></header>
+<div class="wrap"><main><div class="crumb">概念 · 研究方法</div><script type="text/markdown" id="md"># 迴歸分析（Regression Analysis）
+
+## 定義
+用一條方程式描述「結果變數 $y$」如何隨著幾個「解釋變數 $x$」變動，並估計每個 $x$ 的影響方向和大小。最常用的是普通最小平方法（Ordinary Least Squares, OLS）。
+
+$$y_i=\alpha+\beta_1 x_{1i}+\beta_2 x_{2i}+\dots+\varepsilon_i$$
+
+## 直覺解釋
+把很多機構的資料畫在圖上，找一條最貼近所有點的線。係數 $\beta$ 告訴你：其他條件不變時，$x$ 多 1 單位，$y$ 平均多多少。
+
+## 怎麼讀迴歸表
+- **係數**：正負代表方向，大小代表幅度。
+- **t 值或標準誤**：判斷係數是否可能只是巧合；星號代表顯著水準（* 10%、** 5%、*** 1%）。
+- **控制變數**：放進年齡、規模、地區等變數，是為了「在其他條件相同時」比較。
+- **$R^2$**：模型解釋了多少變異。
+
+## 實例
+[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html) 用 104 家微型金融機構，以財務自足率為 $y$，以放款收益率、成本、放款方式、規模、年齡、地區為 $x$。個人放款機構的收益率係數 0.964、在 1% 水準顯著（[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html)）。
+
+## 優點與限制
+- 優點：可以同時考慮很多因素，資料容易取得。
+- 限制：只能說明**相關**；如果有沒觀察到的因素同時影響 $x$ 和 $y$，或 $y$ 反過來影響 $x$，係數就不代表因果（見 [相關不等於因果](../wiki/correlation-vs-causation.html)）。
+
+## 相關概念
+[交互作用項與非線性](../wiki/interaction-and-nonlinear-terms.html) · [相關不等於因果](../wiki/correlation-vs-causation.html) · [方案設置評估法](../wiki/program-placement-evaluation.html) · [5 種研究方法比較](../wiki/research-methods-comparison.html)
+</script><article id="content"></article></main><aside><div class="box"><h4>頁面資訊</h4><dl><dt>狀態</dt><dd><span class="status-draft">draft</span></dd><dt>建立</dt><dd>2026-11-18</dd><dt>更新</dt><dd>2026-11-18</dd></dl><p><span class="tag">研究方法</span><span class="tag">計量</span></p><h4 style='margin-top:16px'>來源</h4><ul><li><a href="../wiki/2007-cull-financial-performance-outreach-microbanks.html">Financial Performance and Outreach: A Global Analysis of Leading Microbanks</a></li></ul><h4 style='margin-top:16px'>反向連結</h4><ul><li><a href="../wiki/research-methods-comparison.html">5 種研究方法比較</a></li><li><a href="../wiki/2007-cull-financial-performance-outreach-microbanks.html">Financial Performance and Outreach: A Global Analysis of Leading Microbanks</a></li><li><a href="../wiki/interaction-and-nonlinear-terms.html">交互作用項與非線性</a></li><li><a href="../wiki/log.html">更新紀錄</a></li><li><a href="../wiki/index.html">目錄</a></li><li><a href="../wiki/correlation-vs-causation.html">相關不等於因果</a></li><li><a href="../research/2026-11-18-research-methods-intro/index.html">研究方法入門：用 5 篇論文看 5 種方法</a></li><li><a href="../research/2026-11-18-research-methods-intro/outline.html">簡報逐頁內容：研究方法入門</a></li><li><a href="../wiki/overview.html">領域總覽</a></li></ul></div></aside></div>
+<footer>由 AI 依 <a href="../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-18</footer>
+<script src="../assets/marked.min.js"></script>
+<script src="../assets/katex.min.js"></script>
+<script src="../assets/auto-render.min.js"></script>
+<script src="../assets/site.js"></script>
+</body></html>

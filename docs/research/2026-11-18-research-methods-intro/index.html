@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>研究方法入門：用 5 篇論文看 5 種方法 · 研究 Wiki 知識庫</title>
+<link rel="stylesheet" href="../../assets/katex.min.css">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="../../index.html">研究 Wiki 知識庫</a><nav class="main"><a href="../../index.html">首頁</a><a href="../../wiki/index.html">目錄</a><a href="../../wiki/overview.html">總覽</a><a href="../../research/index.html">研究產出</a><a href="../../wiki/questions.html">開放問題</a><a href="../../wiki/log.html">更新紀錄</a><a href="../../rules.html">專案規則</a></nav></div></header>
+<div class="wrap"><main><div class="crumb">研究筆記</div><script type="text/markdown" id="md"># 研究方法入門：用 5 篇論文看 5 種方法
+
+> 4.6 流程的 N3 節點產出：只列 wiki 中查得到的事實，每條附出處頁。簡報（N4、N5）只能使用這份清單裡的內容。
+
+## 教學目標
+讓沒學過研究方法的人，看完能回答：「遇到一個研究問題，該用哪種方法？這種方法能說明什麼、不能說明什麼？」
+
+## 可用事實清單
+
+### 總覽
+- 5 個研究問題對應 5 種方法：有沒有效果→準實驗；哪些因素有關→迴歸；換做法會怎樣→個案模擬；未來會怎樣→時間序列；該怎麼選→AHP／ANP（[5 種研究方法比較](../../wiki/research-methods-comparison.html)）
+- 先問問題再選方法；資料決定可行性；每種方法都有作者承認的限制（[5 種研究方法比較](../../wiki/research-methods-comparison.html)）
+
+### 單元一：準實驗（Hamid 2011）
+- 比較 MHI 已設置 ≥ 5 年的地區和即將設置的鄰近地區；329 戶（[Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh](../../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html)）
+- 用「設置」而不是「參與」估計，是為了避開自我選擇；估計的是 ATE（[方案設置評估法](../../wiki/program-placement-evaluation.html)）
+- 結果：糧食充足度係數 0.355，10% 水準顯著；所得、資產、貧窮線都不顯著（[Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh](../../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html)）
+
+### 單元二：迴歸（Cull 2007）
+- 方程式 $y_i=\alpha+\beta_1 x_{1i}+\dots+\varepsilon_i$；係數代表其他條件不變時的平均差異（[迴歸分析](../../wiki/regression-analysis.html)）
+- 49 國、124 家機構；個人放款機構收益率係數 0.964、1% 顯著（[迴歸分析](../../wiki/regression-analysis.html)、[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../../wiki/2007-cull-financial-performance-outreach-microbanks.html)）
+- 獲利在年利率約 60% 趨平（平方項）（[交互作用項與非線性](../../wiki/interaction-and-nonlinear-terms.html)）
+- 三種放款方式平均貸款：個人 1,220、團體 431、村落銀行 149 美元；女性比例 46%、75%、88%（[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../../wiki/2007-cull-financial-performance-outreach-microbanks.html)、[團體連帶貸款](../../wiki/group-lending.html)）
+- 作者說只描述相關；相關不等於因果的三個原因：遺漏變數、反向因果、自我選擇（[相關不等於因果](../../wiki/correlation-vs-causation.html)）
+
+### 單元三：個案研究與模擬（Popova 2015）
+- 3 家公司：FMC、Hilton、Worthington（[個案研究與模擬](../../wiki/case-study-and-simulation.html)）
+- Hilton 要 7,532 口期貨；FMC 要多繳 649,854 至 2,166,180 美元保證金；Worthington 每股盈餘波動增加 3.39%（[OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness and Corporate Capital Requirements](../../wiki/2015-popova-otc-vs-exchange-traded-derivatives.html)）
+- 限制：案例少、ISDA 委託（[個案研究與模擬](../../wiki/case-study-and-simulation.html)、[OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness and Corporate Capital Requirements](../../wiki/2015-popova-otc-vs-exchange-traded-derivatives.html)）
+
+### 單元四：時間序列（Mondal 2014）
+- ARIMA($p,d,q$)：用自己的過去預測未來；Box-Jenkins 四步驟：辨識、估計、檢查、預測（[ARIMA 時間序列模型](../../wiki/arima-time-series.html)）
+- AICc 越小越好；Emami 選 ARIMA(1,0,2)（[AIC 模型選擇](../../wiki/model-selection-aic.html)）
+- 56 檔印度股票，7 個產業準確度都在 85% 以上；FMCG 95.93% 最高，汽車 87.89% 最低（[Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices](../../wiki/2014-mondal-arima-stock-forecasting.html)）
+- 注意：沒和簡單基準比較，高準確度不等於能獲利（[Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices](../../wiki/2014-mondal-arima-stock-forecasting.html)）
+
+### 單元五：AHP／ANP（李婉綾 2022）
+- 1–9 點尺度兩兩比較；$AW=\lambda W$；$CR=CI/RI\le 0.1$（[AHP 與 ANP 多準則決策](../../wiki/ahp-anp.html)）
+- 民眾第一名：建築維護 0.1267；專家（考慮相依性）第一名：造價預算 0.1858（[AHP 與 ANP 多準則決策](../../wiki/ahp-anp.html)、[輕鋼構複合小型住宅使用者決策研究](../../wiki/2022-li-light-steel-housing-anp.html)）
+- 283 份有效問卷中只有 182 份（64%）通過一致性檢定（[AHP 與 ANP 多準則決策](../../wiki/ahp-anp.html)）
+
+## wiki 沒有、簡報不能講的內容
+- 隨機實驗（RCT）的實例 → 列入延伸閱讀，建議日後匯入（[開放問題與待讀清單](../../wiki/questions.html)）
+- 機器學習預測方法 → wiki 無來源，不提
+</script><article id="content"></article></main><aside><div class="box"><h4>頁面資訊</h4><dl><dt>建立</dt><dd>2026-11-18</dd></dl><h4 style='margin-top:16px'>使用的 wiki 頁面</h4><ul><li><a href="../../wiki/research-methods-comparison.html">5 種研究方法比較</a></li><li><a href="../../wiki/program-placement-evaluation.html">方案設置評估法</a></li><li><a href="../../wiki/regression-analysis.html">迴歸分析</a></li><li><a href="../../wiki/interaction-and-nonlinear-terms.html">交互作用項與非線性</a></li><li><a href="../../wiki/correlation-vs-causation.html">相關不等於因果</a></li><li><a href="../../wiki/group-lending.html">團體連帶貸款</a></li><li><a href="../../wiki/case-study-and-simulation.html">個案研究與模擬</a></li><li><a href="../../wiki/arima-time-series.html">ARIMA 時間序列模型</a></li><li><a href="../../wiki/model-selection-aic.html">AIC 模型選擇</a></li><li><a href="../../wiki/ahp-anp.html">AHP 與 ANP 多準則決策</a></li><li><a href="../../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html">Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh</a></li><li><a href="../../wiki/2007-cull-financial-performance-outreach-microbanks.html">Financial Performance and Outreach: A Global Analysis of Leading Microbanks</a></li><li><a href="../../wiki/2015-popova-otc-vs-exchange-traded-derivatives.html">OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness and Corporate Capital Requirements</a></li><li><a href="../../wiki/2014-mondal-arima-stock-forecasting.html">Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices</a></li><li><a href="../../wiki/2022-li-light-steel-housing-anp.html">輕鋼構複合小型住宅使用者決策研究</a></li></ul></div></aside></div>
+<footer>由 AI 依 <a href="../../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-18</footer>
+<script src="../../assets/marked.min.js"></script>
+<script src="../../assets/katex.min.js"></script>
+<script src="../../assets/auto-render.min.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

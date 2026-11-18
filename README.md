@@ -19,8 +19,17 @@
 - 「匯入 raw/papers/檔名.pdf」→ 建立或更新 wiki 頁面
 - 「研究：題目」→ 產出 `outputs/日期-題目/notes.md`
 - 「做簡報」→ 產出逐頁大綱與 HTML 簡報
+- 「做教學簡報：主題」→ 依 CLAUDE.md 4.6 的 loop（N1–N6、G1–G4）產出教學簡報與執行紀錄
 - 「健檢」→ 檢查矛盾、孤兒頁、缺口
 - 「更新網站」→ 執行 `python build.py`，重新產生 `docs/`
+
+## 檢查腳本
+
+```bash
+python tools/check_wiki.py                                   # G2
+python tools/check_outline.py outputs/<題目>/slides-outline.md   # G3
+python tools/check_slides.py outputs/<題目>/slides.html --render # G4
+```
 
 ## 建網站
 

@@ -43,3 +43,26 @@ title: 更新紀錄
 - CLAUDE.md：第 1 節改為不限主題；`domain` 欄位改為一般領域標記；新增第 9 節「網站（GitHub Pages）」
 - 新增 `build.py`、`site/`（樣式與 vendor），產生 `docs/` 供 GitHub Pages 發布
 - 改寫 [[overview]] 為多領域版本；更新 [[index]]、[[questions]]、README
+
+## [2026-11-18] schema | 新增教學簡報流程（4.6）與檢查腳本
+- CLAUDE.md 新增 4.6：N1–N6 節點、G1–G4 檢查閘、run-log 規則
+- 新增 `tools/check_wiki.py`（G2）、`tools/check_slides.py`（G4）
+
+## [2026-11-18] ingest | 4 篇研究方法來源（批次，先討論後生成）
+- G1 討論閘：11:15 使用者確認重點、頁面規劃與簡報架構
+- 新建來源：[[2007-cull-financial-performance-outreach-microbanks]]、[[2015-popova-otc-vs-exchange-traded-derivatives]]、[[2014-mondal-arima-stock-forecasting]]、[[2022-li-light-steel-housing-anp]]
+- 新建概念：[[regression-analysis]]、[[interaction-and-nonlinear-terms]]、[[correlation-vs-causation]]、[[case-study-and-simulation]]、[[arima-time-series]]、[[model-selection-aic]]、[[ahp-anp]]、[[mission-drift]]、[[group-lending]]、[[otc-vs-exchange-derivatives]]、[[hedge-accounting]]
+- 新建比較：[[research-methods-comparison]]
+- 更新：[[microcredit]]、[[program-placement-evaluation]]、[[grameen-bank]]、[[index]]、[[overview]]、[[questions]]
+
+## [2026-11-18] lint | G2 新檢查發現舊頁面數學式損壞
+- 新增 E4（`$` 成對）、E5（連結反斜線）後，發現 [[insurance-demand-theory]]、[[program-placement-evaluation]] 共 6 處公式在 11/8 寫入時被 shell 吃掉；已依原文修正
+
+## [2026-11-18] research | 研究方法入門：用 5 篇論文看 5 種方法（教學簡報）
+- 產出：`outputs/2026-11-18-research-methods-intro/`（notes.md、slides-outline.md、slides.html 18 頁、run-log.md、make_slides.py）
+- 依 CLAUDE.md 4.6 執行；G2 跑 3 次、G3 跑 6 次、G4 跑 6 次＋反向測試；細節見 run-log
+- 使用 wiki 頁面 15 頁；主要依據 [[research-methods-comparison]]
+
+## [2026-11-18] schema | 依執行紀錄修正 4.6
+- 新增 tools/check_outline.py（G3）；G2 加 E4、E5；G4 加 E0、W1
+- 新增「從實際執行學到的規則」：禁止 heredoc 寫 `$`、大綱與 HTML 同源、檢查腳本要反向測試

@@ -22,7 +22,7 @@ TYPE_LABEL = {
     "source": "來源", "concept": "概念", "model": "模型", "org": "機構", "person": "人物",
     "benchmark": "評測基準", "comparison": "比較", "synthesis": "綜述", "overview": "總覽",
     "index": "目錄", "log": "紀錄", "questions": "問題", "research-note": "研究筆記",
-    "slides-outline": "簡報大綱", "rules": "專案規則",
+    "slides-outline": "簡報大綱", "rules": "專案規則", "run-log": "執行紀錄",
 }
 NAV = [("首頁", "index.html"), ("目錄", "wiki/index.html"), ("總覽", "wiki/overview.html"),
        ("研究產出", "research/index.html"), ("開放問題", "wiki/questions.html"),
@@ -86,6 +86,11 @@ def collect():
                 item["outline"] = p
             if (d / "slides.html").exists():
                 item["slides"] = f"research/{d.name}/slides.html"
+            item["runlog"] = None
+            if (d / "run-log.md").exists():
+                p = Page(f"{d.name}/run-log", f"research/{d.name}/run-log.html", d / "run-log.md", "research")
+                pages[p.name] = p
+                item["runlog"] = p
             research.append(item)
     rules = Page("rules", "rules.html", ROOT / "CLAUDE.md", "rules")
     rules.meta["type"] = "rules"
@@ -227,6 +232,8 @@ def research_item(r, from_url):
         btns.append(f'<a class="btn" href="{rel(from_url, r["notes"].url)}">研究筆記</a>')
     if r["outline"]:
         btns.append(f'<a class="btn" href="{rel(from_url, r["outline"].url)}">逐頁大綱</a>')
+    if r.get("runlog"):
+        btns.append(f'<a class="btn" href="{rel(from_url, r["runlog"].url)}">執行紀錄</a>')
     if r["slides"]:
         btns.append(f'<a class="btn solid" href="{rel(from_url, r["slides"])}">開啟簡報</a>')
     return (f'<li><span class="d">{d}</span><div><div>{html.escape(title)}</div>'

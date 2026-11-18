@@ -1,0 +1,52 @@
+---
+type: source
+title: "OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness and Corporate Capital Requirements"
+aliases: [Popova & Simkins 2015, 店頭與交易所衍生品的避險效果]
+authors: ["Ivilina Popova", "Betty Simkins"]
+year: 2015
+venue: Journal of Applied Corporate Finance, 27(1), 63–70
+raw: raw/papers/2015-popova-otc-vs-exchange-traded-derivatives.pdf
+tags: [衍生性商品, 避險, 個案研究, 公司金融]
+domain: 公司金融
+method: 多個案研究＋反事實模擬
+created: 2026-11-18
+updated: 2026-11-18
+ingested: 2026-11-18
+status: solid
+---
+
+# OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness
+
+| 項目 | 內容 |
+|---|---|
+| 作者 | Ivilina Popova（Texas State University）、Betty Simkins（Oklahoma State University） |
+| 發表 | 2015 · *Journal of Applied Corporate Finance* 27(1): 63–70；為 ISDA 委託研究的精簡版 |
+| 方法 | 個案研究與反事實模擬（[[case-study-and-simulation]]）：用三家公司年報中的避險資料，模擬「如果只能用交易所商品」的結果 |
+
+## 一句話摘要
+金融海嘯後的法規要求衍生品集中結算、提高保證金；作者用 FMC、Hilton、Worthington 三個案例模擬發現，若企業只能用交易所標準化商品避險，避險效果變差、盈餘波動變大，還要多準備大量現金。
+
+## 背景
+- 衍生品分成[[otc-vs-exchange-derivatives|店頭（OTC）與交易所交易]]兩類。企業偏好 OTC，因為可以量身訂做，而且隱含銀行授信，不用繳變動保證金。
+- 作者指出，企業避險者只占 OTC 市場不到 10%，而且不是造成金融海嘯的主角。
+- 2014 年 2 月 ISDA 調查企業使用者：86% 認為 OTC 衍生品在風險管理中很重要；68% 認為新法規會提高避險成本；81% 表示避險的行政成本上升。
+
+## 三個案例
+
+| 公司 | OTC 避險 | 若改用交易所商品 | 結果 |
+|---|---|---|---|
+| FMC（化學公司） | 天然氣 OTC 年度合約（calendar strip），2014 年共避險 5,309,744 mmBtu | 每個 OTC 合約要用多達 13 口 NYMEX 期貨拼湊；約 12 個部位變成約 144 個 | 若收 3%–10% 初始保證金，要多繳 649,854 至 2,166,180 美元；每日市價變動最大賺 380 萬、最大賠 250 萬美元 |
+| Hilton Hotels | 3.75 億美元固定利率債券換成浮動利率的利率交換 | 要買 7,532 口歐洲美元期貨，橫跨 10 個到期月 | OTC 避險的每股盈餘標準差最低，從 0.48 降到 0.46 美元（降 4.2%） |
+| Worthington Industries | 1 億美元浮動利率債券換成固定利率 | 要 3,912 口期貨；金融海嘯期間最大保證金追繳超過 1,500 萬美元 | 每股盈餘波動增加 3.39% |
+
+## 結論
+- 對非金融企業，OTC 避險通常比交易所商品更有效率：可以降低盈餘波動、節省保證金現金、避免作業風險，也比較容易符合[[hedge-accounting|避險會計]]（FASB 133）。
+- 引用 Pirrong（2010）：集中結算所本身也有風險；強制所有衍生品集中結算，可能反而增加系統性風險。
+
+## 限制
+- 只有 3 家公司，結果難以推論到所有企業（見 [[case-study-and-simulation]]）。
+- 研究由 ISDA（衍生品交易商協會）委託，立場可能偏向 OTC 市場。**（推論）**
+- 模擬假設有淨額結算，作者自己說實際保證金會更高。
+
+## 影響到的頁面
+[[case-study-and-simulation]]、[[otc-vs-exchange-derivatives]]、[[hedge-accounting]]、[[research-methods-comparison]]

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交互作用項與非線性 · 研究 Wiki 知識庫</title>
+<link rel="stylesheet" href="../assets/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="../index.html">研究 Wiki 知識庫</a><nav class="main"><a href="../index.html">首頁</a><a href="../wiki/index.html">目錄</a><a href="../wiki/overview.html">總覽</a><a href="../research/index.html">研究產出</a><a href="../wiki/questions.html">開放問題</a><a href="../wiki/log.html">更新紀錄</a><a href="../rules.html">專案規則</a></nav></div></header>
+<div class="wrap"><main><div class="crumb">概念 · 研究方法</div><script type="text/markdown" id="md"># 交互作用項與非線性（Interaction and Nonlinear Terms）
+
+## 交互作用項：效果會因群體而不同
+把兩個變數相乘放進迴歸，例如 $Yield \times Type$，就能讓「利率對獲利的影響」在不同放款方式之間不一樣。
+
+- [Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html) 以個人放款機構為基準組；交互作用項的係數表示團體放款或村落銀行和基準組的**差距**（[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html)）。
+
+## 平方項：效果先升後降
+加入 $x^2$，可以描述「到某個程度後就不再增加」的關係。
+
+$$y=\beta_1 x+\beta_2 x^2,\quad \beta_1>0,\ \beta_2<0 \Rightarrow \text{倒 U 型}$$
+
+- 個人放款機構的獲利隨利率上升，但在年利率約 60% 附近趨平（[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html)）。
+- 逾期比例與收益率呈倒 U 型，高點約在收益率 40%（[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html)）。
+- 貸款金額與每元成本呈 U 型（[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html)）。
+
+## 注意
+作者提醒，線性項和平方項高度相關時，可能「假性地」產生這種彎曲形狀，所以要搭配理論解讀（[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html)）。
+
+## 相關概念
+[迴歸分析](../wiki/regression-analysis.html)
+</script><article id="content"></article></main><aside><div class="box"><h4>頁面資訊</h4><dl><dt>狀態</dt><dd><span class="status-draft">draft</span></dd><dt>建立</dt><dd>2026-11-18</dd><dt>更新</dt><dd>2026-11-18</dd></dl><p><span class="tag">研究方法</span><span class="tag">計量</span></p><h4 style='margin-top:16px'>來源</h4><ul><li><a href="../wiki/2007-cull-financial-performance-outreach-microbanks.html">Financial Performance and Outreach: A Global Analysis of Leading Microbanks</a></li></ul><h4 style='margin-top:16px'>反向連結</h4><ul><li><a href="../wiki/2007-cull-financial-performance-outreach-microbanks.html">Financial Performance and Outreach: A Global Analysis of Leading Microbanks</a></li><li><a href="../wiki/log.html">更新紀錄</a></li><li><a href="../wiki/index.html">目錄</a></li><li><a href="../research/2026-11-18-research-methods-intro/index.html">研究方法入門：用 5 篇論文看 5 種方法</a></li><li><a href="../research/2026-11-18-research-methods-intro/outline.html">簡報逐頁內容：研究方法入門</a></li><li><a href="../wiki/regression-analysis.html">迴歸分析</a></li></ul></div></aside></div>
+<footer>由 AI 依 <a href="../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-18</footer>
+<script src="../assets/marked.min.js"></script>
+<script src="../assets/katex.min.js"></script>
+<script src="../assets/auto-render.min.js"></script>
+<script src="../assets/site.js"></script>
+</body></html>

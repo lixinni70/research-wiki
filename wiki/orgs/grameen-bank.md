@@ -33,3 +33,4 @@ status: draft
 ## 相關
 - [[grameen-kalyan]] · [[brac]] · [[muhammad-yunus]]
 - 來源：[[2011-hamid-micro-health-insurance-poverty-bangladesh]]
+- 團體連帶貸款的先驅，後來轉向個人放款（[[2007-cull-financial-performance-outreach-microbanks]]；見 [[group-lending]]）

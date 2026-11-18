@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>簡報逐頁內容：研究方法入門 · 研究 Wiki 知識庫</title>
+<link rel="stylesheet" href="../../assets/katex.min.css">
+<link rel="stylesheet" href="../../assets/site.css">
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="../../index.html">研究 Wiki 知識庫</a><nav class="main"><a href="../../index.html">首頁</a><a href="../../wiki/index.html">目錄</a><a href="../../wiki/overview.html">總覽</a><a href="../../research/index.html">研究產出</a><a href="../../wiki/questions.html">開放問題</a><a href="../../wiki/log.html">更新紀錄</a><a href="../../rules.html">專案規則</a></nav></div></header>
+<div class="wrap full"><main><div class="crumb">簡報大綱</div><script type="text/markdown" id="md"># 簡報逐頁內容：研究方法入門
+
+> 由 make_slides.py 產生（與 slides.html 同一份資料）。每頁的「出處」是 G3 對應閘的檢查依據。
+
+## 1｜研究方法入門
+- 副標：用 5 篇論文看 5 種研究方法
+- **出處**：無（封面）
+- **講者備註**：開場：今天不背公式，而是學會「看到一個問題，知道該用什麼方法」。
+
+## 2｜同一個領域，5 種不同的問題
+- 5 個問題對應 5 種方法
+- 學完能判斷：該用什麼方法、能說明什麼、不能說明什麼
+- **出處**：[5 種研究方法比較](../../wiki/research-methods-comparison.html)
+- **講者備註**：用這張表當地圖，後面每個單元都會回到這裡。
+
+## 3｜單元一：有沒有效果？
+- 準實驗設計
+- **出處**：無（章節頁）
+
+## 4｜準實驗：找一個「幾乎一樣」的對照組
+- 問題：微型健康保險能減少貧窮嗎？
+- 比較已設置 ≥ 5 年和即將設置的鄰近地區，329 戶
+- 用「設置」而非「參與」，避開自我選擇
+- 結果：只有糧食充足度顯著（0.355，10%）
+- **出處**：[方案設置評估法](../../wiki/program-placement-evaluation.html)、[Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh](../../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html)
+- **講者備註**：強調「對照組要盡量相似」是因果推論的核心。
+
+## 5｜單元二：哪些因素有關？
+- 迴歸分析
+- **出處**：無（章節頁）
+
+## 6｜迴歸：同時看很多因素
+- 方程式與係數的意思
+- 例子：49 國、124 家微型金融機構
+- 收益率係數 0.964、1% 顯著
+- 怎麼讀星號
+- **出處**：[迴歸分析](../../wiki/regression-analysis.html)、[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../../wiki/2007-cull-financial-performance-outreach-microbanks.html)
+- **講者備註**：先讓學生看懂一個係數，再談限制。
+
+## 7｜迴歸發現的取捨
+- 三種放款方式的平均貸款與女性比例
+- 越服務窮人的方式越依賴補貼
+- 獲利在年利率約 60% 趨平（平方項）
+- **出處**：[團體連帶貸款](../../wiki/group-lending.html)、[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../../wiki/2007-cull-financial-performance-outreach-microbanks.html)、[交互作用項與非線性](../../wiki/interaction-and-nonlinear-terms.html)
+- **講者備註**：這頁讓學生看到迴歸的產出長什麼樣子。
+
+## 8｜小心：相關不等於因果
+- 三個原因：遺漏變數、反向因果、自我選擇
+- Cull 作者自己說只描述相關
+- 對照 Hamid 的準實驗
+- **出處**：[相關不等於因果](../../wiki/correlation-vs-causation.html)、[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../../wiki/2007-cull-financial-performance-outreach-microbanks.html)、[Can Micro Health Insurance Reduce Poverty? Evidence From Bangladesh](../../wiki/2011-hamid-micro-health-insurance-poverty-bangladesh.html)
+- **講者備註**：這是整堂課最重要的觀念之一。
+
+## 9｜單元三：換一種做法會怎樣？
+- 個案研究與模擬
+- **出處**：無（章節頁）
+
+## 10｜個案模擬：用真實資料重算「如果」
+- 問題：企業若只能用交易所期貨避險會怎樣？
+- 3 家公司的模擬結果
+- 限制：案例少、委託單位
+- **出處**：[個案研究與模擬](../../wiki/case-study-and-simulation.html)、[OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness and Corporate Capital Requirements](../../wiki/2015-popova-otc-vs-exchange-traded-derivatives.html)
+- **講者備註**：提醒學生看研究也要看是誰出資。
+
+## 11｜單元四：未來會怎樣？
+- 時間序列
+- **出處**：無（章節頁）
+
+## 12｜ARIMA：用過去預測未來
+- p、d、q 的意思
+- Box-Jenkins 四步驟、AICc 選模型
+- 7 個產業準確度都在 85% 以上
+- 注意：沒和簡單基準比較
+- **出處**：[ARIMA 時間序列模型](../../wiki/arima-time-series.html)、[AIC 模型選擇](../../wiki/model-selection-aic.html)、[Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices](../../wiki/2014-mondal-arima-stock-forecasting.html)
+- **講者備註**：讓學生學會質疑「準確度」的比較基準。
+
+## 13｜單元五：該怎麼選？
+- 多準則決策
+- **出處**：無（章節頁）
+
+## 14｜AHP／ANP：一次只比兩個
+- 1–9 點尺度兩兩比較
+- 一致性檢定 CR ≤ 0.1
+- 民眾最看重建築維護 0.1267；專家最看重造價預算 0.1858
+- 只有 64% 問卷通過一致性檢定
+- **出處**：[AHP 與 ANP 多準則決策](../../wiki/ahp-anp.html)、[輕鋼構複合小型住宅使用者決策研究](../../wiki/2022-li-light-steel-housing-anp.html)
+- **講者備註**：AHP 的結果是「偏好」，不是客觀事實。
+
+## 15｜總結：5 種方法一張表
+- 對照表：能回答／不能回答
+- **出處**：[5 種研究方法比較](../../wiki/research-methods-comparison.html)
+- **講者備註**：請學生遮住右欄，自己說說看每種方法的限制。
+
+## 16｜怎麼選方法？
+- 想知道因果→準實驗
+- 哪些因素一起變動→迴歸
+- 少數案例要細節→個案
+- 預測→時間序列並比基準
+- 做決策→AHP 並檢查一致性
+- **出處**：[5 種研究方法比較](../../wiki/research-methods-comparison.html)
+- **講者備註**：這張是帶走用的速查卡。
+
+## 17｜小測驗
+- Q1 想知道新政策是否「造成」改變→準實驗
+- Q2 迴歸係數顯著代表？→相關
+- Q3 預測準確度 90% 先問什麼？→和簡單基準比
+- **出處**：無（測驗頁）
+- **講者備註**：可以讓學生舉手投票再點答案。
+
+## 18｜延伸閱讀
+- wiki 頁面連結
+- **出處**：無（延伸閱讀）
+</script><article id="content"></article></main></div>
+<footer>由 AI 依 <a href="../../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-18</footer>
+<script src="../../assets/marked.min.js"></script>
+<script src="../../assets/katex.min.js"></script>
+<script src="../../assets/auto-render.min.js"></script>
+<script src="../../assets/site.js"></script>
+</body></html>

@@ -19,4 +19,4 @@ status: stub
 [[2011-hamid-micro-health-insurance-poverty-bangladesh]] 認為這對 MHI 不是主要問題，因為方案本來就針對窮人，而窮人通常是高風險族群。
 
 ## 相關概念
-- [[moral-hazard]] · [[insurance-demand-theory]]
+- [[moral-hazard]] · [[insurance-demand-theory]] · [[group-lending]]

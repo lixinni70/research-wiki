@@ -45,6 +45,7 @@ wiki llm/
 │   ├── syntheses/         ← 主題綜述、查詢產生的分析、時間線
 │   └── assets/            ← Claude 產生的圖表
 ├── templates/             ← 各類頁面的範本
+├── tools/                 ← 檢查腳本：check_wiki.py（G2）、check_outline.py（G3）、check_slides.py（G4）
 ├── build.py               ← 建置網站：wiki/ + outputs/ + CLAUDE.md → docs/
 ├── site/                  ← 網站原始樣式（site.css、site.js、vendor/）
 ├── docs/                  ← 網站成品（GitHub Pages 發布；自動產生，不要手改）
@@ -232,6 +233,66 @@ status: draft            # stub | draft | solid
 - **HTML 簡報**：內嵌 KaTeX（JS、CSS、字型都直接寫進 HTML，不使用 CDN；含 auto-render，支援 `$...$` 和 `$$...$$`），寫法和筆記相同，可以直接複製。
 - 數學式中的文字用 `\text{}`。
 
+### 4.6 教學簡報流程（loop / graph）
+
+使用者說「做教學簡報：主題」時，照下面這張流程圖執行。每個節點都有固定的輸入、輸出和檢查閘；**閘沒通過就回到指定節點重做，不可以跳過**。
+
+```
+N1 取得資料 ──► G1 討論閘 ──► N2 寫入 wiki ──► G2 wiki 檢查閘
+   ▲  (使用者確認重點)     │                 │ (tools/check_wiki.py)
+   │                       ▼ 不通過           ▼ 不通過 → 回 N2
+   └──── 缺資料 ◄──── N3 查詢 wiki ◄──────────┘ 通過
+                          │
+                          ▼
+                    N4 整理大綱 ──► G3 對應閘（每頁都有 wiki 出處）
+                          ▲              │ 不通過 → 回 N4；wiki 沒有 → 回 N1
+                          │              ▼ 通過
+                    N5 生成 HTML ──► G4 簡報檢查閘（tools/check_slides.py）
+                                         │ 不通過 → 回 N5（數字或出處錯）或 N4（結構錯）
+                                         ▼ 通過
+                                   N6 發布（build.py → git push）
+```
+
+| 節點 | 做什麼 | 產出 |
+|---|---|---|
+| N1 取得資料 | 讀完每份來源全文，存進 `raw/` | 原檔 |
+| G1 討論閘 | 列出每份來源的重點、方法、預計頁面，**等使用者確認**（先討論、後生成） | 確認紀錄（寫進 run-log） |
+| N2 寫入 wiki | 照 4.1 建立或更新頁面 | wiki 頁面 |
+| G2 wiki 檢查閘 | 執行 `python tools/check_wiki.py`：連結都存在、frontmatter 完整、檔名唯一、數學式 `$` 成對、連結沒有反斜線；警告孤兒頁與沒附出處的數字 | 檢查報告 |
+| N3 查詢 wiki | 讀 index → 找出主題相關頁面 → 列出「可用事實清單」（事實＋出處頁） | `notes.md` |
+| N4 整理大綱 | 依教學結構排頁（見下方） | `slides-outline.md` |
+| G3 對應閘 | 執行 `python tools/check_outline.py <slides-outline.md>`：每頁都有出處、出處頁存在、內容頁不可以沒有出處、notes 列為「不能講」的內容沒出現 | 檢查報告 |
+| N5 生成 HTML | 從 `templates/slides-template.html` 複製，套風格 C | `slides.html` |
+| G4 簡報檢查閘 | 執行 `python tools/check_slides.py <slides.html> --render`：解析頁數正確；每頁 `data-src` 的頁面都存在；簡報中每個數字都能在它引用的 wiki 頁面找到；沒有超出版面；版面不會太空 | 檢查報告 |
+| N6 發布 | `python build.py` → commit → push | 網站 |
+
+**會重複執行的部分**
+- N1 → G1：每份來源各跑一次。
+- N2 → G2：每次匯入都跑，直到 0 錯誤。
+- N4 → G3 → N5 → G4：簡報可能要來回好幾輪，每輪都記在 run-log。
+
+**教學簡報的結構**（給沒學過的人）
+1. 開場：用一個問題引起興趣，說明學完能做到什麼
+2. 每個單元：先問一個問題 → 用一篇研究當例子 → 講方法的核心概念 → 一句話重點
+3. 總結：對照表，以及怎麼選
+4. 小測驗：3 題，可以點選看答案
+5. 延伸閱讀：wiki 頁面連結
+
+**簡報 HTML 的標記規則**（讓 G4 可以自動檢查）
+- 每個內容頁：`<section class="slide" data-src="頁面1,頁面2">`，頁面名稱就是 wiki 檔名（不含 .md）。
+- 封面、章節頁、測驗頁：`data-src="none"`。
+- 自己的推論或背景說明：放在 `<span class="note-inference">` 裡，G4 不檢查這段的數字。
+
+**從實際執行學到的規則**（2026-11-18 第一次執行後加入，見該次 run-log）
+- 寫入含 `$` 的 Markdown 時，不可以用 shell 的 heredoc（`cat <<EOF`），`$y$` 會被當成變數吃掉；請用 Python 或編輯工具。G2 的 E4 會檢查。
+- 表格裡不要用 `[[頁面\|文字]]`，改寫成「文字（[[頁面]]）」。G2 的 E5 會檢查。
+- 大綱和 HTML 要從同一份資料產生（例如 `make_slides.py`），避免兩者不一致。
+- 檢查腳本新增或修改後，要先做**反向測試**：故意放入錯誤，確認腳本真的會抓到。
+- G4 加 `--render` 時，會檢查版面密度（W1：內容高度 < 75% 表示太空，投影時字會太小）。
+
+**執行紀錄**
+每次執行都在 `outputs/<題目>/run-log.md` 記下：每個閘的結果、錯誤內容、退回哪個節點、怎麼修正。這份紀錄是改進流程的依據；同一類錯誤出現兩次以上，就要考慮把檢查往前移，並修改本節。
+
 ---
 
 ## 5. `index.md` 與 `log.md` 格式
@@ -287,6 +348,7 @@ status: draft            # stub | draft | solid
 | 「健檢」/「lint」 | 執行 4.3 |
 | 「最近做了什麼」 | 讀 `log.md` 最後幾筆並摘要 |
 | 「研究：…」 | 執行 4.4，產出 notes.md |
+| 「做教學簡報：主題」 | 執行 4.6 的完整流程 |
 | 「做簡報」 | 根據 notes 產出 slides-outline.md，確認後產出 slides.html |
 | 「更新網站」 | 執行第 9 節的建置流程 |
 | 「接下來讀什麼」 | 根據 `questions.md` 與 wiki 缺口建議來源 |

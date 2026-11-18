@@ -5,7 +5,7 @@ aliases: [Program Placement Evaluation, 方案設置偏誤, Program Placement Bi
 tags: [影響評估, 計量經濟學, 研究方法]
 domain: 研究方法
 created: 2026-11-08
-updated: 2026-11-08
+updated: 2026-11-18
 sources: ["[[2011-hamid-micro-health-insurance-poverty-bangladesh]]"]
 status: draft
 ---
@@ -18,12 +18,12 @@ status: draft
 ## 為什麼需要
 用「參與」來估計效果時，會遇到**內生性**問題：一些觀察不到的個人特質，可能同時影響參與決定和結果。
 
-- 結構式：{ij} = X_{ij}\beta + A_{ij}\delta + \varepsilon_{ij}$，其中 $ 表示是否參與。
-- 參與式：{ij} = X_{ij}\beta + Z_{ij}\phi + \mu_{ij}$
+- 結構式：$y_{ij} = X_{ij}\beta + A_{ij}\delta + \varepsilon_{ij}$，其中 $A$ 表示是否參與。
+- 參與式：$A_{ij} = X_{ij}\beta + Z_{ij}\phi + \mu_{ij}$
 - 如果 $\varepsilon$ 和 $\mu$ 相關，$\delta$ 的估計就會有偏誤（[[2011-hamid-micro-health-insurance-poverty-bangladesh]]）。
 
 ## 設置模型
-{ij} = X_{ij}\beta + P_{ij}\lambda + \varepsilon_{ij}$，其中 =1$ 代表方案地區，=0$ 代表對照地區。$\lambda$ 估計的是**平均處理效果（ATE）**。
+$y_{ij} = X_{ij}\beta + P_{ij}\lambda + \varepsilon_{ij}$，其中 $P=1$ 代表方案地區，$P=0$ 代表對照地區。$\lambda$ 估計的是**平均處理效果（ATE）**。
 
 **比 ATT 適合的情況**（[[2011-hamid-micro-health-insurance-poverty-bangladesh]]）：
 - 方案有外溢效果，未參與者也會受益。
@@ -46,4 +46,4 @@ status: draft
 - 地區數很少時，等於只有一組對照（推論）。
 
 ## 相關概念
-- [[micro-health-insurance]] · [[informal-risk-sharing]]（非正式保險在比較時也可能造成偏誤）
+- [[micro-health-insurance]] · [[informal-risk-sharing]]（非正式保險在比較時也可能造成偏誤） · [[correlation-vs-causation]] · [[research-methods-comparison]]

@@ -46,8 +46,31 @@
 - CLAUDE.md：第 1 節改為不限主題；`domain` 欄位改為一般領域標記；新增第 9 節「網站（GitHub Pages）」
 - 新增 `build.py`、`site/`（樣式與 vendor），產生 `docs/` 供 GitHub Pages 發布
 - 改寫 [領域總覽](../wiki/overview.html) 為多領域版本；更新 [目錄](../wiki/index.html)、[開放問題與待讀清單](../wiki/questions.html)、README
+
+## [2026-11-18] schema | 新增教學簡報流程（4.6）與檢查腳本
+- CLAUDE.md 新增 4.6：N1–N6 節點、G1–G4 檢查閘、run-log 規則
+- 新增 `tools/check_wiki.py`（G2）、`tools/check_slides.py`（G4）
+
+## [2026-11-18] ingest | 4 篇研究方法來源（批次，先討論後生成）
+- G1 討論閘：11:15 使用者確認重點、頁面規劃與簡報架構
+- 新建來源：[Financial Performance and Outreach: A Global Analysis of Leading Microbanks](../wiki/2007-cull-financial-performance-outreach-microbanks.html)、[OTC vs. Exchange Traded Derivatives and Their Impact on Hedging Effectiveness and Corporate Capital Requirements](../wiki/2015-popova-otc-vs-exchange-traded-derivatives.html)、[Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices](../wiki/2014-mondal-arima-stock-forecasting.html)、[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html)
+- 新建概念：[迴歸分析](../wiki/regression-analysis.html)、[交互作用項與非線性](../wiki/interaction-and-nonlinear-terms.html)、[相關不等於因果](../wiki/correlation-vs-causation.html)、[個案研究與模擬](../wiki/case-study-and-simulation.html)、[ARIMA 時間序列模型](../wiki/arima-time-series.html)、[AIC 模型選擇](../wiki/model-selection-aic.html)、[AHP 與 ANP 多準則決策](../wiki/ahp-anp.html)、[使命漂移](../wiki/mission-drift.html)、[團體連帶貸款](../wiki/group-lending.html)、[店頭與交易所衍生性商品](../wiki/otc-vs-exchange-derivatives.html)、[避險會計](../wiki/hedge-accounting.html)
+- 新建比較：[5 種研究方法比較](../wiki/research-methods-comparison.html)
+- 更新：[微型貸款](../wiki/microcredit.html)、[方案設置評估法](../wiki/program-placement-evaluation.html)、[Grameen Bank](../wiki/grameen-bank.html)、[目錄](../wiki/index.html)、[領域總覽](../wiki/overview.html)、[開放問題與待讀清單](../wiki/questions.html)
+
+## [2026-11-18] lint | G2 新檢查發現舊頁面數學式損壞
+- 新增 E4（`$` 成對）、E5（連結反斜線）後，發現 [保險需求理論](../wiki/insurance-demand-theory.html)、[方案設置評估法](../wiki/program-placement-evaluation.html) 共 6 處公式在 11/8 寫入時被 shell 吃掉；已依原文修正
+
+## [2026-11-18] research | 研究方法入門：用 5 篇論文看 5 種方法（教學簡報）
+- 產出：`outputs/2026-11-18-research-methods-intro/`（notes.md、slides-outline.md、slides.html 18 頁、run-log.md、make_slides.py）
+- 依 CLAUDE.md 4.6 執行；G2 跑 3 次、G3 跑 6 次、G4 跑 6 次＋反向測試；細節見 run-log
+- 使用 wiki 頁面 15 頁；主要依據 [5 種研究方法比較](../wiki/research-methods-comparison.html)
+
+## [2026-11-18] schema | 依執行紀錄修正 4.6
+- 新增 tools/check_outline.py（G3）；G2 加 E4、E5；G4 加 E0、W1
+- 新增「從實際執行學到的規則」：禁止 heredoc 寫 `$`、大綱與 HTML 同源、檢查腳本要反向測試
 </script><article id="content"></article></main></div>
-<footer>由 AI 依 <a href="../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-08</footer>
+<footer>由 AI 依 <a href="../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-18</footer>
 <script src="../assets/marked.min.js"></script>
 <script src="../assets/katex.min.js"></script>
 <script src="../assets/auto-render.min.js"></script>

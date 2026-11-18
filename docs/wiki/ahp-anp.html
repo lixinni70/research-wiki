@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AHP 與 ANP 多準則決策 · 研究 Wiki 知識庫</title>
+<link rel="stylesheet" href="../assets/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="../index.html">研究 Wiki 知識庫</a><nav class="main"><a href="../index.html">首頁</a><a href="../wiki/index.html">目錄</a><a href="../wiki/overview.html">總覽</a><a href="../research/index.html">研究產出</a><a href="../wiki/questions.html">開放問題</a><a href="../wiki/log.html">更新紀錄</a><a href="../rules.html">專案規則</a></nav></div></header>
+<div class="wrap"><main><div class="crumb">概念 · 研究方法</div><script type="text/markdown" id="md"># AHP 與 ANP 多準則決策
+
+## 定義
+- **分析層級程序法（AHP）**：Saaty 於 1971 年提出。把決策拆成「目標 → 準則 → 方案」的樹狀層級，透過兩兩比較算出各準則的權重；假設同一層的準則彼此獨立（[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html)）。
+- **分析網路程序法（ANP）**：AHP 的進階版，允許準則之間互相影響、有回饋關係，用超級矩陣計算（[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html)）。
+
+## 直覺解釋
+一次比較 11 個條件很難；但「維護和造價哪個重要？重要多少？」一次只比兩個就容易多了。把所有兩兩比較的答案整理起來，就能算出每個條件的權重。
+
+## 步驟
+1. 建立層級架構（目標、構面、要素、方案）。
+2. 用 1–9 點尺度做成對比較：1 同等重要、3 稍微重要、5 頗為重要、7 極為重要、9 絕對重要（[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html)）。
+3. 由成對比較矩陣求特徵向量：$AW=\lambda W$。
+4. 一致性檢定，CR 不超過 0.1 才算合格：
+
+$$CI=\frac{\lambda_{max}-n}{n-1},\qquad CR=\frac{CI}{RI}\le 0.1$$
+
+例如受訪者說 A 比 B 重要、B 比 C 重要，卻又說 C 比 A 重要，CR 就會偏高，這份答案不可靠。
+
+5. ANP 另外建立超級矩陣，反覆自乘到收斂，得到考慮相依性的權重。
+
+## 實例
+[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html) 用 4 個構面、11 項要素評估小型住宅：
+- 民眾最看重建築維護 0.1267（[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html)）。
+- 考慮相依性後，專家最看重造價預算 0.1858（[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html)）。
+- 283 份有效問卷中只有 182 份（64%）通過一致性檢定（[輕鋼構複合小型住宅使用者決策研究](../wiki/2022-li-light-steel-housing-anp.html)）。
+
+## 優點與限制
+- 優點：把主觀判斷變成可比較的數字；適合沒有現成資料的決策問題。
+- 限制：成對比較題目多，受訪者容易前後矛盾；結果反映的是「受訪者的偏好」，不是客觀事實。
+
+## 相關概念
+[5 種研究方法比較](../wiki/research-methods-comparison.html)
+</script><article id="content"></article></main><aside><div class="box"><h4>頁面資訊</h4><dl><dt>狀態</dt><dd><span class="status-draft">draft</span></dd><dt>建立</dt><dd>2026-11-18</dd><dt>更新</dt><dd>2026-11-18</dd></dl><p><span class="tag">研究方法</span><span class="tag">決策分析</span></p><h4 style='margin-top:16px'>來源</h4><ul><li><a href="../wiki/2022-li-light-steel-housing-anp.html">輕鋼構複合小型住宅使用者決策研究</a></li></ul><h4 style='margin-top:16px'>反向連結</h4><ul><li><a href="../wiki/research-methods-comparison.html">5 種研究方法比較</a></li><li><a href="../wiki/log.html">更新紀錄</a></li><li><a href="../wiki/index.html">目錄</a></li><li><a href="../research/2026-11-18-research-methods-intro/index.html">研究方法入門：用 5 篇論文看 5 種方法</a></li><li><a href="../research/2026-11-18-research-methods-intro/outline.html">簡報逐頁內容：研究方法入門</a></li><li><a href="../wiki/2022-li-light-steel-housing-anp.html">輕鋼構複合小型住宅使用者決策研究</a></li><li><a href="../wiki/questions.html">開放問題與待讀清單</a></li><li><a href="../wiki/overview.html">領域總覽</a></li></ul></div></aside></div>
+<footer>由 AI 依 <a href="../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-18</footer>
+<script src="../assets/marked.min.js"></script>
+<script src="../assets/katex.min.js"></script>
+<script src="../assets/auto-render.min.js"></script>
+<script src="../assets/site.js"></script>
+</body></html>

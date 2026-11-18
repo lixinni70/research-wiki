@@ -27,4 +27,4 @@ status: stub
 - **副作用**：[[2011-hamid-micro-health-insurance-poverty-bangladesh]] 的田野觀察發現，即使共付額不高，對極貧家戶仍是很強的阻礙。他們會轉向提供賒帳的非正式醫療者，即使總花費更高。作者認為這可能是 MHI 沒有顯著降低醫療支出的原因之一。
 
 ## 相關概念
-- [[adverse-selection]] · [[insurance-demand-theory]] · [[micro-health-insurance]]
+- [[adverse-selection]] · [[insurance-demand-theory]] · [[micro-health-insurance]] · [[group-lending]]

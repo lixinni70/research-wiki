@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARIMA 時間序列模型 · 研究 Wiki 知識庫</title>
+<link rel="stylesheet" href="../assets/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="../index.html">研究 Wiki 知識庫</a><nav class="main"><a href="../index.html">首頁</a><a href="../wiki/index.html">目錄</a><a href="../wiki/overview.html">總覽</a><a href="../research/index.html">研究產出</a><a href="../wiki/questions.html">開放問題</a><a href="../wiki/log.html">更新紀錄</a><a href="../rules.html">專案規則</a></nav></div></header>
+<div class="wrap"><main><div class="crumb">概念 · 研究方法</div><script type="text/markdown" id="md"># ARIMA 時間序列模型
+
+## 定義
+自我迴歸整合移動平均模型（AutoRegressive Integrated Moving Average），寫成 ARIMA($p,d,q$)，用一個變數**自己的過去**來預測它的未來。
+
+| 參數 | 意思 |
+|---|---|
+| $p$ | 自我迴歸（AR）：用過去幾期的值 |
+| $d$ | 差分次數：把有趨勢的序列變成平穩序列 |
+| $q$ | 移動平均（MA）：用過去幾期的預測誤差 |
+
+## 直覺解釋
+預測明天的股價時，最好的線索常常是今天和最近幾天的股價。ARIMA 就是把「最近的值」和「最近猜錯多少」組合起來。
+
+## 建模步驟（Box-Jenkins）
+1. **辨識**：試幾組 $p,d,q$，用 [AIC/AICc](../wiki/model-selection-aic.html) 挑最好的。
+2. **估計**：算出係數。
+3. **檢查**：殘差的 ACF、PACF 應該沒有顯著的落後項。
+4. **預測**：用樣本外資料評估準確度。
+
+## 實例
+[Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices](../wiki/2014-mondal-arima-stock-forecasting.html) 預測 56 檔印度股票未來 30 天的價格，7 個產業的平均準確度都在 85% 以上；不同訓練長度之間沒有顯著差異（[Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices](../wiki/2014-mondal-arima-stock-forecasting.html)）。
+
+## 限制
+- 只看自己的過去，不考慮新聞、利率等外部因素。
+- 評估預測模型時，應該和簡單基準（例如「明天＝今天」）比較；高準確度不等於有預測價值（見 [Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices](../wiki/2014-mondal-arima-stock-forecasting.html) 的注意事項）。
+
+## 相關概念
+[AIC 模型選擇](../wiki/model-selection-aic.html) · [5 種研究方法比較](../wiki/research-methods-comparison.html)
+</script><article id="content"></article></main><aside><div class="box"><h4>頁面資訊</h4><dl><dt>狀態</dt><dd><span class="status-draft">draft</span></dd><dt>建立</dt><dd>2026-11-18</dd><dt>更新</dt><dd>2026-11-18</dd></dl><p><span class="tag">研究方法</span><span class="tag">時間序列</span><span class="tag">預測</span></p><h4 style='margin-top:16px'>來源</h4><ul><li><a href="../wiki/2014-mondal-arima-stock-forecasting.html">Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices</a></li></ul><h4 style='margin-top:16px'>反向連結</h4><ul><li><a href="../wiki/research-methods-comparison.html">5 種研究方法比較</a></li><li><a href="../wiki/model-selection-aic.html">AIC 模型選擇</a></li><li><a href="../wiki/2014-mondal-arima-stock-forecasting.html">Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices</a></li><li><a href="../wiki/log.html">更新紀錄</a></li><li><a href="../wiki/index.html">目錄</a></li><li><a href="../research/2026-11-18-research-methods-intro/index.html">研究方法入門：用 5 篇論文看 5 種方法</a></li><li><a href="../research/2026-11-18-research-methods-intro/outline.html">簡報逐頁內容：研究方法入門</a></li><li><a href="../wiki/questions.html">開放問題與待讀清單</a></li><li><a href="../wiki/overview.html">領域總覽</a></li></ul></div></aside></div>
+<footer>由 AI 依 <a href="../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-18</footer>
+<script src="../assets/marked.min.js"></script>
+<script src="../assets/katex.min.js"></script>
+<script src="../assets/auto-render.min.js"></script>
+<script src="../assets/site.js"></script>
+</body></html>

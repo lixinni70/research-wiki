@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices · 研究 Wiki 知識庫</title>
+<link rel="stylesheet" href="../assets/katex.min.css">
+<link rel="stylesheet" href="../assets/site.css">
+</head><body>
+<header class="top"><div class="in"><a class="brand" href="../index.html">研究 Wiki 知識庫</a><nav class="main"><a href="../index.html">首頁</a><a href="../wiki/index.html">目錄</a><a href="../wiki/overview.html">總覽</a><a href="../research/index.html">研究產出</a><a href="../wiki/questions.html">開放問題</a><a href="../wiki/log.html">更新紀錄</a><a href="../rules.html">專案規則</a></nav></div></header>
+<div class="wrap"><main><div class="crumb">來源 · 計量與預測</div><script type="text/markdown" id="md"># Study of Effectiveness of Time Series Modeling (ARIMA) in Forecasting Stock Prices
+
+| 項目 | 內容 |
+|---|---|
+| 作者 | Prapanna Mondal、Labani Shit、Saptarsi Goswami（Institute of Engineering and Management） |
+| 發表 | 2014 · IJCSEA 4(2): 13–29 · DOI 10.5121/ijcsea.2014.4202 |
+| 資料 | 印度國家證券交易所（NSE）7 個產業、每產業 8 家，共 56 家公司；訓練資料 2012 年 4 月到 2014 年 2 月（23 個月），預測接下來 30 天 |
+| 方法 | ARIMA（[ARIMA 時間序列模型](../wiki/arima-time-series.html)），以 AICc（[AIC 模型選擇](../wiki/model-selection-aic.html)） 選模型，ACF/PACF 檢查殘差，配對 t 檢定比較不同訓練長度 |
+
+## 一句話摘要
+用 ARIMA 預測 56 檔印度股票未來 30 天的價格，7 個產業的平均準確度都在 85% 以上，民生消費（FMCG）最準、汽車和銀行最差；訓練資料用 6、12、18 或 23 個月，準確度沒有顯著差異。
+
+## 方法步驟
+1. **模型辨識**：p、q 只試 2 以下（Box-Jenkins 建議），選 AICc 最小的模型。以 Emami Limited 為例，ARIMA(1,0,2) 的 AICc 為 −2175.97，是所有候選中最小。
+2. **參數估計**：ARIMA(1,0,2) 的 ar1 = 0.9863（標準誤 0.0073）。
+3. **模型檢查**：殘差的 ACF、PACF 沒有顯著落後項，表示模型合適。
+4. **衡量準確度**：準確度 ＝ 1 − |實際值 − 預測值| ÷ 實際值，再取平均並乘以 100%。
+5. **配對 t 檢定**：比較 4 種訓練長度的準確度，p 值都在 0.19 以上，無法拒絕「沒有差異」的虛無假設。
+
+## 主要結果（原文 Table 4，23 個月訓練資料）
+
+| 產業 | 準確度 |
+|---|---|
+| 民生消費 FMCG | 95.93% |
+| 電力 | 92.28% |
+| 基礎建設 | 91.29% |
+| 資訊科技 | 91.06% |
+| 銀行 | 90.51% |
+| 鋼鐵 | 90.46% |
+| 汽車 | 87.89% |
+
+- 個股差異很大：汽車業的 TVS 只有 69.78%（用 18 個月資料時更低到 44.31%）。
+- 汽車、銀行、鋼鐵的準確度標準差較大。
+
+> [!warning] 方法上需要注意
+> - 文中稱用 MAE（平均絕對誤差）計算準確度，但公式實際上是 1 − 絕對百分比誤差，也就是 1 − MAPE。
+> - 沒有和簡單基準（例如「明天＝今天」的隨機漫步預測）比較；股價每日變動通常很小，所以 85% 以上的「準確度」不代表模型有預測能力，也不代表能獲利。**（推論）**
+
+## 影響到的頁面
+[ARIMA 時間序列模型](../wiki/arima-time-series.html)、[AIC 模型選擇](../wiki/model-selection-aic.html)、[5 種研究方法比較](../wiki/research-methods-comparison.html)
+</script><article id="content"></article></main><aside><div class="box"><h4>頁面資訊</h4><dl><dt>狀態</dt><dd><span class="status-solid">solid</span></dd><dt>作者</dt><dd>Prapanna Mondal、Labani Shit、Saptarsi Goswami</dd><dt>年份</dt><dd>2014</dd><dt>出處</dt><dd>International Journal of Computer Science, Engineering and Applications (IJCSEA), 4(2), 13–29</dd><dt>建立</dt><dd>2026-11-18</dd><dt>更新</dt><dd>2026-11-18</dd><dt>匯入</dt><dd>2026-11-18</dd><dt>連結</dt><dd><a href="https://doi.org/10.5121/ijcsea.2014.4202">原文</a></dd></dl><p><span class="tag">時間序列</span><span class="tag">ARIMA</span><span class="tag">預測</span><span class="tag">股價</span></p><h4 style='margin-top:16px'>反向連結</h4><ul><li><a href="../wiki/research-methods-comparison.html">5 種研究方法比較</a></li><li><a href="../wiki/model-selection-aic.html">AIC 模型選擇</a></li><li><a href="../wiki/arima-time-series.html">ARIMA 時間序列模型</a></li><li><a href="../wiki/log.html">更新紀錄</a></li><li><a href="../wiki/index.html">目錄</a></li><li><a href="../research/2026-11-18-research-methods-intro/index.html">研究方法入門：用 5 篇論文看 5 種方法</a></li><li><a href="../research/2026-11-18-research-methods-intro/outline.html">簡報逐頁內容：研究方法入門</a></li><li><a href="../wiki/overview.html">領域總覽</a></li></ul></div></aside></div>
+<footer>由 AI 依 <a href="../rules.html">CLAUDE.md</a> 規則維護 · 最後建置 2026-11-18</footer>
+<script src="../assets/marked.min.js"></script>
+<script src="../assets/katex.min.js"></script>
+<script src="../assets/auto-render.min.js"></script>
+<script src="../assets/site.js"></script>
+</body></html>
